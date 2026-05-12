@@ -2,7 +2,7 @@
 
 # 🔬 ResearchOS
 
-**An autonomous multi-agent AI research engine that searches, reads, writes, and critically reviews — so you don't have to.**
+**An autonomous multi-agent AI research engine that searches, reads, writes, and critically reviews so you don't have to.**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green)](https://langchain.com)
@@ -17,7 +17,7 @@
 
 ## 🧠 What Is ResearchOS?
 
-ResearchOS is a fully autonomous research assistant built on a **multi-agent LangChain pipeline**. Give it any topic, and it autonomously searches the web, scrapes and reads relevant pages, writes a structured research report, and then critiques its own output — all in real time through a clean Streamlit interface.
+ResearchOS is a fully autonomous research assistant built on a **multi-agent LangChain pipeline**. Give it any topic, and it autonomously searches the web, scrapes and reads relevant pages, writes a structured research report, and then critiques its own output - all in real time through a clean Streamlit interface.
 
 No manual Googling. No copy-pasting. Just research, delivered.
 
@@ -25,13 +25,13 @@ No manual Googling. No copy-pasting. Just research, delivered.
 
 ## ✨ Features
 
-- 🤖 **Multi-Agent Workflow** — Dedicated agents for searching, reading, writing, and reviewing
-- 🌐 **Real-Time Web Intelligence** — Live search powered by Tavily API
-- 📄 **Deep Web Scraping** — Full page content extraction via BeautifulSoup
-- ✍️ **AI Report Generation** — Structured, coherent reports written by a dedicated writer agent
-- 🧐 **Built-In AI Critic** — A separate critic agent reviews and scores the report for quality
-- ⚡ **Live Workflow Execution** — Watch agents run step-by-step in real time
-- 📥 **Export Options** — Download reports as Markdown or DOCX
+- 🤖 **Multi-Agent Workflow** - Dedicated agents for searching, reading, writing, and reviewing
+- 🌐 **Real-Time Web Intelligence** - Live search powered by Tavily API
+- 📄 **Deep Web Scraping** - Full page content extraction via BeautifulSoup
+- ✍️ **AI Report Generation** - Structured, coherent reports written by a dedicated writer agent
+- 🧐 **Built-In AI Critic** - A separate critic agent reviews and scores the report for quality
+- ⚡ **Live Workflow Execution** - Watch agents run step-by-step in real time
+- 📥 **Export Options** - Download reports as Markdown 
 
 ---
 
@@ -75,7 +75,7 @@ Each agent is independently prompted and powered by Groq/Mistral, enabling fast,
 | Layer | Technology |
 |---|---|
 | Agent Framework | [LangChain](https://langchain.com) |
-| LLM Inference | [Groq API](https://groq.com) + [Mistral AI](https://mistral.ai) |
+| LLM Inference | [Mistral AI](https://mistral.ai) |
 | Web Search | [Tavily Search API](https://tavily.com) |
 | Web Scraping | [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/) |
 | UI | [Streamlit](https://streamlit.io) |
@@ -88,7 +88,7 @@ Each agent is independently prompted and powered by Groq/Mistral, enabling fast,
 ### Prerequisites
 
 - Python 3.10+
-- A [Groq API key](https://console.groq.com)
+- A [Mistral AI API key](https://console.mistral.ai)
 - A [Tavily API key](https://app.tavily.com)
 
 ### Steps
@@ -116,7 +116,7 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```env
-GROQ_API_KEY=your_groq_api_key_here
+MISTRAL_API_KEY=your_mistral_api_key_here
 TAVILY_API_KEY=your_tavily_api_key_here
 ```
 
