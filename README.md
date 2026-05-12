@@ -7,7 +7,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green)](https://langchain.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit)](https://streamlit.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [Features](#-features) · [How It Works](#-how-it-works) · [Tech Stack](#-tech-stack) · [Installation](#-installation) · [Usage](#-usage) · [Roadmap](#-roadmap)
 
@@ -163,8 +162,4 @@ Contributions, issues, and feature requests are welcome! Feel free to open an [i
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/maulikg29)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?logo=github)](https://github.com/Maulikkkk)
 
----
 
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
