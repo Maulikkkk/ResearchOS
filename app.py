@@ -13,19 +13,20 @@ st.set_page_config(
 # ── Custom CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
 /* ── Reset & base ── */
 html, body, [class*="css"] {
-    font-family: 'DM Sans', sans-serif;
-    color: #e8e4dc;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #dde6f0;
 }
 
 .stApp {
-    background: #0a0a0f;
+    background: #080e18;
     background-image:
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(255,140,50,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(255,80,30,0.08) 0%, transparent 55%);
+        radial-gradient(ellipse 70% 55% at 5% 15%, rgba(32,180,170,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 45% at 95% 85%, rgba(60,100,200,0.08) 0%, transparent 55%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a2a40' fill-opacity='0.35'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ── Hide default streamlit chrome ── */
@@ -37,111 +38,111 @@ html, body, [class*="css"] {
     text-align: center;
     padding: 3.5rem 0 2.5rem;
     position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #ff8c32;
-    margin-bottom: 1rem;
-    opacity: 0.9;
+    color: #20b4aa;
+    margin-bottom: 1.2rem;
+    opacity: 0.85;
 }
 .hero h1 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    color: #f0ebe0;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #eef3fa;
     margin: 0 0 1rem;
 }
 .hero h1 span {
-    color: #ff8c32;
+    color: #20b4aa;
+    font-style: normal;
+    font-weight: 600;
 }
 .hero-sub {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 300;
-    color: #a09890;
-
+    color: #7a92ab;
     width: 100%;
-    max-width: 620px;
-
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
-
-    line-height: 1.8;
+    line-height: 1.85;
     text-align: center;
-
     display: block;
 }
 
 /* ── Divider ── */
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,140,50,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(32,180,170,0.25), rgba(60,100,200,0.2), transparent);
     margin: 2rem 0;
 }
 
 /* ── Input card ── */
 .input-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,140,50,0.15);
-    border-radius: 16px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(32,180,170,0.12);
+    border-radius: 12px;
     padding: 2rem 2.5rem;
     margin-bottom: 2rem;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 /* ── Streamlit input overrides ── */
 .stTextInput > div > div > input {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,140,50,0.25) !important;
-    border-radius: 10px !important;
-    color: #f0ebe0 !important;
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 1rem !important;
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(32,180,170,0.2) !important;
+    border-radius: 8px !important;
+    color: #eef3fa !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-size: 0.98rem !important;
     padding: 0.75rem 1rem !important;
     transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 .stTextInput > div > div > input:focus {
-    border-color: #ff8c32 !important;
-    box-shadow: 0 0 0 3px rgba(255,140,50,0.12) !important;
+    border-color: #20b4aa !important;
+    box-shadow: 0 0 0 3px rgba(32,180,170,0.1) !important;
 }
 .stTextInput > label {
-    font-family: 'DM Mono', monospace !important;
-    font-size: 0.72rem !important;
-    letter-spacing: 0.15em !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.18em !important;
     text-transform: uppercase !important;
-    color: #ff8c32 !important;
+    color: #20b4aa !important;
     font-weight: 500 !important;
 }
 
 /* ── Button ── */
 .stButton > button {
-    background: linear-gradient(135deg, #ff8c32 0%, #ff5a1a 100%) !important;
-    color: #0a0a0f !important;
-    font-family: 'Syne', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    letter-spacing: 0.04em !important;
+    background: linear-gradient(135deg, #1a9e96 0%, #157a8a 100%) !important;
+    color: #f0f8ff !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
     border: none !important;
-    border-radius: 10px !important;
-    padding: 0.7rem 2.2rem !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 2.2rem !important;
     cursor: pointer !important;
     transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s !important;
-    box-shadow: 0 4px 20px rgba(255,140,50,0.3) !important;
+    box-shadow: 0 4px 20px rgba(32,180,170,0.25), inset 0 1px 0 rgba(255,255,255,0.1) !important;
     width: 100%;
 }
 .stButton > button:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 28px rgba(255,140,50,0.4) !important;
-    opacity: 0.95 !important;
+    box-shadow: 0 8px 30px rgba(32,180,170,0.35) !important;
+    opacity: 0.92 !important;
 }
 .stButton > button:active {
     transform: translateY(0) !important;
@@ -149,34 +150,34 @@ html, body, [class*="css"] {
 
 /* ── Pipeline step cards ── */
 .step-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
-    padding: 1.5rem 1.8rem;
-    margin-bottom: 1.2rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 1.4rem 1.7rem;
+    margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, background 0.3s;
 }
 .step-card.active {
-    border-color: rgba(255,140,50,0.4);
-    background: rgba(255,140,50,0.04);
+    border-color: rgba(32,180,170,0.35);
+    background: rgba(32,180,170,0.04);
 }
 .step-card.done {
-    border-color: rgba(80,200,120,0.3);
-    background: rgba(80,200,120,0.03);
+    border-color: rgba(90,180,255,0.25);
+    background: rgba(90,180,255,0.03);
 }
 .step-card::before {
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 3px;
-    border-radius: 14px 0 0 14px;
-    background: rgba(255,255,255,0.05);
+    border-radius: 10px 0 0 10px;
+    background: rgba(255,255,255,0.04);
     transition: background 0.3s;
 }
-.step-card.active::before { background: #ff8c32; }
-.step-card.done::before   { background: #50c878; }
+.step-card.active::before { background: #20b4aa; }
+.step-card.done::before   { background: #5ab4ff; }
 
 .step-header {
     display: flex;
@@ -185,118 +186,122 @@ html, body, [class*="css"] {
     margin-bottom: 0.3rem;
 }
 .step-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
     font-weight: 500;
-    letter-spacing: 0.15em;
-    color: #ff8c32;
-    opacity: 0.7;
+    letter-spacing: 0.18em;
+    color: #20b4aa;
+    opacity: 0.65;
 }
 .step-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.95rem;
-    font-weight: 700;
-    color: #f0ebe0;
+    font-weight: 600;
+    color: #dde6f0;
 }
 .step-status {
     margin-left: auto;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
-.status-waiting  { color: #555; }
-.status-running  { color: #ff8c32; }
-.status-done     { color: #50c878; }
+.status-waiting  { color: #3a4a5c; }
+.status-running  { color: #20b4aa; }
+.status-done     { color: #5ab4ff; }
 
 /* ── Result panels ── */
 .result-panel {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
     padding: 1.8rem 2rem;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
 .result-panel-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #ff8c32;
+    color: #20b4aa;
     margin-bottom: 1rem;
     padding-bottom: 0.7rem;
-    border-bottom: 1px solid rgba(255,140,50,0.15);
+    border-bottom: 1px solid rgba(32,180,170,0.12);
 }
 .result-content {
-    font-size: 0.92rem;
-    line-height: 1.8;
-    color: #cdc8bf;
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: #8aa4bc;
     white-space: pre-wrap;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 /* ── Report & feedback panels ── */
 .report-panel {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,140,50,0.2);
-    border-radius: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(32,180,170,0.18);
+    border-radius: 12px;
     padding: 2rem 2.5rem;
     margin-top: 1rem;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.2);
 }
 .feedback-panel {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(80,200,120,0.2);
-    border-radius: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(90,180,255,0.18);
+    border-radius: 12px;
     padding: 2rem 2.5rem;
     margin-top: 1rem;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.2);
 }
 .panel-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     margin-bottom: 1.2rem;
     padding-bottom: 0.7rem;
 }
-.panel-label.orange {
-    color: #ff8c32;
-    border-bottom: 1px solid rgba(255,140,50,0.15);
+.panel-label.teal {
+    color: #20b4aa;
+    border-bottom: 1px solid rgba(32,180,170,0.15);
 }
-.panel-label.green {
-    color: #50c878;
-    border-bottom: 1px solid rgba(80,200,120,0.15);
+.panel-label.blue {
+    color: #5ab4ff;
+    border-bottom: 1px solid rgba(90,180,255,0.15);
 }
 
 /* ── Progress text ── */
-.stSpinner > div { color: #ff8c32 !important; }
+.stSpinner > div { color: #20b4aa !important; }
 
 /* ── Expander ── */
 details summary {
-    font-family: 'DM Mono', monospace !important;
-    font-size: 0.75rem !important;
-    color: #a09890 !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 0.72rem !important;
+    color: #7a92ab !important;
     letter-spacing: 0.1em !important;
     cursor: pointer;
 }
 
 /* ── Section heading ── */
 .section-heading {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #f0ebe0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #eef3fa;
     margin: 2rem 0 1rem;
 }
 
 /* ── Toast-style notice ── */
 .notice {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: #605850;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: #2a3a4c;
     text-align: center;
     margin-top: 3rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -318,7 +323,7 @@ def step_card(num: str, title: str, state: str, desc: str = ""):
             <span class="step-title">{title}</span>
             <span class="step-status {cls}">{label}</span>
         </div>
-        {"<div style='font-size:0.82rem;color:#706860;margin-top:0.3rem;'>"+desc+"</div>" if desc else ""}
+        {"<div style='font-size:0.8rem;color:#4a6070;margin-top:0.3rem;'>"+desc+"</div>" if desc else ""}
     </div>
     """, unsafe_allow_html=True)
 
@@ -333,7 +338,7 @@ for key in ("results", "running", "done"):
 st.markdown("""
 <div class="hero">
     <div class="hero-eyebrow">An Autonomous AI Research Engine</div>
-    <h1>Research<span>OS</span></h1>
+    <h1><em>Research</em><span>OS</span></h1>
     <p class="hero-sub">
         Four specialized AI agents collaborate for searching, scraping, writing,
         and critiquing to deliver a polished research report on any topic.
@@ -360,19 +365,19 @@ with col_input:
     # Example chips
     st.markdown("""
     <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-        <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#605850;letter-spacing:0.1em;">TRY →</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;color:#3a4a5c;letter-spacing:0.12em;">TRY →</span>
     """, unsafe_allow_html=True)
     examples = ["LLM agents 2025", "CRISPR gene editing", "Fusion energy progress"]
     for ex in examples:
         st.markdown(f"""
         <span style="
-            background:rgba(255,255,255,0.04);
-            border:1px solid rgba(255,255,255,0.08);
-            border-radius:6px;
+            background:rgba(32,180,170,0.06);
+            border:1px solid rgba(32,180,170,0.12);
+            border-radius:5px;
             padding:0.25rem 0.7rem;
-            font-size:0.75rem;
-            color:#a09890;
-            font-family:'DM Sans',sans-serif;
+            font-size:0.73rem;
+            color:#7a92ab;
+            font-family:'IBM Plex Sans',sans-serif;
             cursor:default;
         ">{ex}</span>
         """, unsafe_allow_html=True)
@@ -489,7 +494,7 @@ if r:
     if "writer" in r:
         st.markdown("""
         <div class="report-panel">
-            <div class="panel-label orange">📝 Final Research Report</div>
+            <div class="panel-label teal">📝 Final Research Report</div>
         """, unsafe_allow_html=True)
         st.markdown(r["writer"])   # render markdown natively
         st.markdown("</div>", unsafe_allow_html=True)
@@ -506,7 +511,7 @@ if r:
     if "critic" in r:
         st.markdown("""
         <div class="feedback-panel">
-            <div class="panel-label green">🧐 Critic Feedback</div>
+            <div class="panel-label blue">🧐 Critic Feedback</div>
         """, unsafe_allow_html=True)
         st.markdown(r["critic"])
         st.markdown("</div>", unsafe_allow_html=True)
@@ -515,8 +520,6 @@ if r:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="notice">
-    ResearchOS · Powered by LangChain Multi-Agent Pipeline · Built with Streamlit
+    ResearchOS · Powered by LangChain · Multi-Agent Pipeline · Built with Streamlit
 </div>
 """, unsafe_allow_html=True)
-
-
